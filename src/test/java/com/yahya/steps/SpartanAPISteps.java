@@ -18,8 +18,8 @@ public class SpartanAPISteps {
         // send your request and save the result into a variable and make it global
     }
     @Then("I should get status code {int}")
-    public void i_should_get_status_code(Integer int1) {
-        System.out.println(int1);
+    public void i_should_get_status_code(Integer statusCode) {
+        System.out.println(statusCode);
 
         // make assertions and save it into class level variable if more validation is needed
     }
