@@ -29,9 +29,6 @@ Feature: Spartan App Rest API Data
     Then the success field value should be A Spartan is Born!
 
 
-
-
-
 #  Scenario: Should be able to call /spartan to get all data in JSON format
 #    Given the base_uri and base_path set
 #    And I ask for "json" response payload
