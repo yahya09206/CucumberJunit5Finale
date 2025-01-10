@@ -1,5 +1,6 @@
 package com.yahya.steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -40,4 +41,7 @@ public class SpartanAPISteps {
         thenPart = response.then().statusCode(expectStatusCode);
     }
 
+    @And("The response format should be {string}")
+    public void theResponseFormatShouldBe(String arg0) {
+    }
 }

@@ -9,3 +9,4 @@ Feature: Spartan App Rest API Up and running
     Given the base_uri and base_path set
     When I send request to "/hello" endpoint
     Then I should get status code 200
+    And The response format should be "text/plain;charset=UTF-8"
