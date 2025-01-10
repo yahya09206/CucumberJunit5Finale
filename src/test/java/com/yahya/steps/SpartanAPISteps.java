@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
@@ -48,7 +49,17 @@ public class SpartanAPISteps {
 
     @And("the response payload should be Hello from Sparta")
     public void theResponsePayloadShouldBeHelloFromSparta() {
-
         thenPart.body(is("Hello from Sparta"));
+    }
+
+
+    @And("I ask for {string} response payload")
+    public void iAskForResponsePayload(String responseFormat) {
+
+        if (responseFormat.equals("json")) {
+            givenPart.accept(ContentType.JSON);
+        } else if (responseFormat.equals("xml")) {
+            givenPart.accept(ContentType.XML);
+        }
     }
 }

@@ -11,3 +11,11 @@ Feature: Spartan App Rest API Up and running
     Then I should get status code 200
     And The response format should be "text/plain;charset=UTF-8"
     And the response payload should be Hello from Sparta
+
+
+  Scenario: Should be able to call /spartan to get all data
+    Given the base_uri and base_path set
+    And I ask for "json" response payload
+    When I send request to "/spartans" endpoint
+    Then I should get status code 200
+    Then The response format should be "application/json"
