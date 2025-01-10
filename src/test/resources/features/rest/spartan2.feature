@@ -14,8 +14,12 @@ Feature: Spartan App Rest API Data
     Then The response format should be "<expectedContentTypeHeader>"
     Examples:
       | formatAskedFor | expectedContentTypeHeader |
-      | json           | application/json1          |
+      | json           | application/json          |
       | xml            | application/xml           |
+
+  Scenario: Should be able to add valid data to Spartan app
+    # Set the content type, provide the json body or map ody send request and verify 201
+    Given I send the data in json format
 
 
 
