@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.*;
@@ -13,6 +14,7 @@ public class SpartanAPISteps {
 
     RequestSpecification givenPart;
     Response response;
+    ValidatableResponse thenPart;
 
     @Given("the base_uri and base_path set")
     public void the_base_uri_and_base_path_set() {
@@ -31,10 +33,11 @@ public class SpartanAPISteps {
         response = givenPart.when().get(endpoint).prettyPeek();
     }
     @Then("I should get status code {int}")
-    public void i_should_get_status_code(Integer statusCode) {
-        System.out.println(statusCode);
+    public void i_should_get_status_code(int expectStatusCode) {
+        System.out.println(expectStatusCode);
 
         // make assertions and save it into class level variable if more validation is needed
+        thenPart = response.then().statusCode(expectStatusCode);
     }
 
 }
