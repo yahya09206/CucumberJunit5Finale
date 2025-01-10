@@ -7,6 +7,15 @@ Feature: Spartan App Rest API Data
   Background:
     Given the base_uri and base_path set
 
+  Scenario Outline: Should be able to call /spartan to get all data in desired format
+
+    Examples:
+      | formatAskedFor | expectedContentTypeHeader |
+      | json           | application/json          |
+      | xml            | application/xml           |
+
+
+
 #  Scenario: Should be able to call /spartan to get all data in JSON format
 #    Given the base_uri and base_path set
 #    And I ask for "json" response payload
