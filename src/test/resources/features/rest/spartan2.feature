@@ -14,7 +14,7 @@ Feature: Spartan App Rest API Data
     Then The response format should be "<expectedContentTypeHeader>"
     Examples:
       | formatAskedFor | expectedContentTypeHeader |
-      | json           | application/json          |
+      | json           | application/json1          |
       | xml            | application/xml           |
 
 
