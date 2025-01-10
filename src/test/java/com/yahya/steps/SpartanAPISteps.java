@@ -42,6 +42,7 @@ public class SpartanAPISteps {
     }
 
     @And("The response format should be {string}")
-    public void theResponseFormatShouldBe(String arg0) {
+    public void theResponseFormatShouldBe(String expectedContentType) {
+        thenPart.contentType(expectedContentType);
     }
 }
