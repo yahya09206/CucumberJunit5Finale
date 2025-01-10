@@ -8,7 +8,10 @@ Feature: Spartan App Rest API Data
     Given the base_uri and base_path set
 
   Scenario Outline: Should be able to call /spartan to get all data in desired format
-
+    And I ask for "<formatAskedFor>" response payload
+    When I send request to "/spartans" endpoint
+    Then I should get status code 200
+    Then The response format should be "<expectedContentTypeHeader>"
     Examples:
       | formatAskedFor | expectedContentTypeHeader |
       | json           | application/json          |
