@@ -24,7 +24,7 @@ Feature: Spartan App Rest API Data
       | name   | Kimberley  |
       | gender | Female     |
       | phone  | 9876543210 |
-    When I send post request to {string} endpoint
+    When I send post request to "/spartans"
     Then I should get status code 201
     Then the success field value should be A Spartan is Born!
 

@@ -9,6 +9,8 @@ import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 
+import java.util.Map;
+
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
@@ -61,5 +63,24 @@ public class SpartanAPISteps {
         } else if (responseFormat.equals("xml")) {
             givenPart.accept(ContentType.XML);
         }
+    }
+
+    @Given("I send the data in json format")
+    public void iSendTheDataInJsonFormat() {
+
+        givenPart.contentType(ContentType.JSON);
+    }
+
+    @And("I am sending below valid spartan data")
+    public void iAmSendingBelowValidSpartanData(Map<String, Object> requestPayloadMap) {
+
+        givenPart.body(requestPayloadMap);
+    }
+
+    @When("I send post request to {string}")
+    public void iSendPostRequestTo(String endpoint) {
+
+        givenPart.when().post(endpoint);
+
     }
 }
