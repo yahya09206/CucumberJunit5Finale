@@ -10,3 +10,4 @@ Feature: Spartan App Rest API Up and running
     When I send request to "/hello" endpoint
     Then I should get status code 200
     And The response format should be "text/plain;charset=UTF-8"
+    And the response payload should be Hello from Sparta
