@@ -45,4 +45,10 @@ public class SpartanAPISteps {
     public void theResponseFormatShouldBe(String expectedContentType) {
         thenPart.contentType(expectedContentType);
     }
+
+    @And("the response payload should be Hello from Sparta")
+    public void theResponsePayloadShouldBeHelloFromSparta() {
+
+        thenPart.body(is("Hello from Sparta"));
+    }
 }
