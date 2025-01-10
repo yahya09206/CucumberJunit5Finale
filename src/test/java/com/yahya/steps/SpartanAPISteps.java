@@ -80,7 +80,15 @@ public class SpartanAPISteps {
     @When("I send post request to {string}")
     public void iSendPostRequestTo(String endpoint) {
 
-        givenPart.when().post(endpoint);
+        response = givenPart
+                        .when()
+                        .post(endpoint).prettyPeek();
 
+    }
+
+    @Then("the success field value should be A Spartan is Born!")
+    public void theSuccessFieldValueShouldBeASpartanIsBorn() {
+
+        thenPart.body("success", is("A Spartan is Born!"));
     }
 }
