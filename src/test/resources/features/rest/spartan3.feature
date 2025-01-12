@@ -10,3 +10,5 @@ Feature: Spartan API Single Data
   Scenario: Should be able to get single spartan using /spartans/{id}
     And I have valid spartan id
     And I ask for "json" response payload
+    When I send
+    Then I should get status code 200
