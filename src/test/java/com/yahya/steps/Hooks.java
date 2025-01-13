@@ -7,7 +7,7 @@ import io.cucumber.java.Before;
 
 public class Hooks {
 
-    @Before("database")
+    @Before("@database")
     public void setupDBConnection() {
 
         System.out.println("FROM SET UP DB HOOK");
