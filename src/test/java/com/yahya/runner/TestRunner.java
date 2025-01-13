@@ -9,7 +9,7 @@ import static io.cucumber.junit.platform.engine.Constants.GLUE_PROPERTY_NAME;
 
 @Suite
 @IncludeEngines("cucumber")
-@SelectClasspathResource("resources/rest")
+@SelectClasspathResource("features/rest")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.yahya.steps")
 public class TestRunner {
 
