@@ -19,6 +19,7 @@ public class SpartanAPISteps {
     RequestSpecification givenPart;
     Response response;
     ValidatableResponse thenPart;
+    int lastId;
 
     @Given("the base_uri and base_path set")
     public void the_base_uri_and_base_path_set() {
@@ -95,6 +96,8 @@ public class SpartanAPISteps {
     @And("I have valid spartan id")
     public void iHaveValidSpartanId() {
 
-        get("/spartan");
+        // get a valid spartan id and make it available for all methods
+        // think about whether I need the name, phone and gender
+        lastId = givenPart.get("/spartan").path("id[-1]");
     }
 }
