@@ -99,5 +99,13 @@ public class SpartanAPISteps {
         // get a valid spartan id and make it available for all methods
         // think about whether I need the name, phone and gender
         lastId = givenPart.get("/spartan").path("id[-1]");
+        // set id into path variable in this method i.e
+        givenPart.pathParam("id", lastId);
+    }
+
+    @When("I send get request to {string} endpoint with valid id")
+    public void iSendGetRequestToEndpointWithValidId(String endpoint) {
+
+
     }
 }
