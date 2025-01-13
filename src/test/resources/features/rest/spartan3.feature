@@ -7,6 +7,7 @@ Feature: Spartan API Single Data
   Background:
     Given the base_uri and base_path set
 
+    @database
   Scenario: Should be able to get single spartan using /spartans/{id}
     And I have valid spartan id
     And I ask for "json" response payload

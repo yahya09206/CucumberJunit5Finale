@@ -1,5 +1,6 @@
 package com.yahya.steps;
 
+import com.yahya.utility.DB_Util;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -103,9 +104,16 @@ public class SpartanAPISteps {
         givenPart.pathParam("id", lastId);
     }
 
-    @When("I send get request to {string} endpoint with valid id")
-    public void iSendGetRequestToEndpointWithValidId(String endpoint) {
+//    @When("I send get request to {string} endpoint with valid id")
+//    public void iSendGetRequestToEndpointWithValidId(String endpoint) {
+//
+//
+//    }
 
+    @Then("the spartan data with that id should match the value in the database")
+    public void theSpartanDataWithThatIdShouldMatchTheValueInTheDatabase() {
 
+        // SELECT * FROM SPARTANS WHERE SPARTAN_ID = VALIDHERE
+        DB_Util.runQuery("SELECT * FROM SPARTANS WHERE SPARTAN_ID = " + lastId);
     }
 }
