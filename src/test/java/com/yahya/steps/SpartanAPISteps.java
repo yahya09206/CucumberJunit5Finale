@@ -30,7 +30,7 @@ public class SpartanAPISteps {
 
 
     }
-    @When("I send request to {string} endpoint")
+    @When("I send get request to {string} endpoint")
     public void i_send_request_to_endpoint(String endpoint) {
         System.out.println(endpoint);
         // send your request and save the result into a variable and make it global
@@ -90,5 +90,11 @@ public class SpartanAPISteps {
     public void theSuccessFieldValueShouldBeASpartanIsBorn() {
 
         thenPart.body("success", is("A Spartan is Born!"));
+    }
+
+    @And("I have valid spartan id")
+    public void iHaveValidSpartanId() {
+
+        get("/spartan");
     }
 }

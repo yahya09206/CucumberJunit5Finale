@@ -16,7 +16,7 @@ Feature: Spartan App Rest API Up and running
   Scenario: Should be able to call /spartan to get all data in JSON format
     Given the base_uri and base_path set
     And I ask for "json" response payload
-    When I send request to "/spartans" endpoint
+    When I send get request to "/spartans" endpoint
     Then I should get status code 200
     Then The response format should be "application/json"
 
@@ -24,7 +24,7 @@ Feature: Spartan App Rest API Up and running
   Scenario: Should be able to call /spartan to get all data in XML format
     Given the base_uri and base_path set
     And I ask for "xml" response payload
-    When I send request to "/spartans" endpoint
+    When I send get request to "/spartans" endpoint
     Then I should get status code 200
     Then The response format should be "application/xml"
 
