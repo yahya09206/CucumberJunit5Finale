@@ -135,8 +135,11 @@ public class SpartanAPISteps {
         // for the index, use 0 to all spartanCount - 1
         List<Integer> allIds = givenPart.get("/spartans").path("id");
         // get random ID at a location from 0 to allIds.size()-1
-        Random rand = new Random();
-        int randomIndex = rand.nextInt(allIds.size());
-        System.out.println("randomIndex = " + randomIndex);
+//        Random rand = new Random();
+//        int randomIndex = rand.nextInt(allIds.size());
+//        System.out.println("randomIndex = " + randomIndex);
+
+        Faker faker = new Faker();
+        int randomIndex = faker.number().numberBetween(0, allIds.size() - 1);
     }
 }
