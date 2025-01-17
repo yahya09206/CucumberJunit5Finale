@@ -24,6 +24,7 @@ public class SpartanAPISteps {
     Response response;
     ValidatableResponse thenPart;
     int lastId;
+    int randomSpartanId;
 
     @Given("the base_uri and base_path set")
     public void the_base_uri_and_base_path_set() {
@@ -141,5 +142,9 @@ public class SpartanAPISteps {
 
         Faker faker = new Faker();
         int randomIndex = faker.number().numberBetween(0, allIds.size() - 1);
+        // use above index to get item from the list
+        randomSpartanId = allIds.get(randomIndex);
+        // set ID to path variable
+        givenPart.pathParam("id", randomSpartanId);
     }
 }
