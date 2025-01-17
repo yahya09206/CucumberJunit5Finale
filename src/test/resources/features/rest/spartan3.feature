@@ -23,3 +23,11 @@ Feature: Spartan API Single Data
     Then I should get status code 404
 
   Scenario: Should be able to update a single spartan using PUT /spartans/{id}
+    And I have valid random spartan id
+    And I send the data in json format
+    And I am sending below valid spartan data
+      | name   | Kimberley  |
+      | gender | Female     |
+      | phone  | 9876543210 |
+    When I send put request to "/spartans/{id}" endpoint
+    Then I should get status code 204

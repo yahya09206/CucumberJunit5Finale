@@ -147,4 +147,11 @@ public class SpartanAPISteps {
         // set ID to path variable
         givenPart.pathParam("id", randomSpartanId);
     }
+
+
+    @When("I send put request to {string} endpoint")
+    public void iSendPutRequestToEndpoint(String endpoint) {
+
+        response = givenPart.when().put(endpoint).prettyPeek();
+    }
 }
