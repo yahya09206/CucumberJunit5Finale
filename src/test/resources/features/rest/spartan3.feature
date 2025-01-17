@@ -21,3 +21,5 @@ Feature: Spartan API Single Data
     Then I should get status code 204
     When I send get request to "/spartans/{id}" endpoint
     Then I should get status code 404
+
+  Scenario: Should be able to update a single spartan using PUT /spartans/{id}
