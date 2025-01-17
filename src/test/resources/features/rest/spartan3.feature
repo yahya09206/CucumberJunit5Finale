@@ -14,3 +14,5 @@ Feature: Spartan API Single Data
     When I send get request to "/spartans/{id}" endpoint
     Then I should get status code 200
     Then the spartan data with that id should match the value in the database
+
+  Scenario: Should be able to delete a single spartan using DELETE /spartans/{id}
