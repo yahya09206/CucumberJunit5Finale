@@ -136,6 +136,7 @@ public class SpartanAPISteps {
         List<Integer> allIds = givenPart.get("/spartans").path("id");
         // get random ID at a location from 0 to allIds.size()-1
         Random rand = new Random();
-        int randomID = rand.nextInt(allIds.size());
+        int randomIndex = rand.nextInt(allIds.size());
+        System.out.println("randomIndex = " + randomIndex);
     }
 }
