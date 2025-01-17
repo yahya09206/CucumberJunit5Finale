@@ -31,3 +31,6 @@ Feature: Spartan API Single Data
       | phone  | 9876543210 |
     When I send put request to "/spartans/{id}" endpoint
     Then I should get status code 204
+    When I send get request to "/spartans/{id}" endpoint
+    Then the field value for "name" path should be equal to "Kimberley"
+    Then the field value for "gender" path should be equal to "Female"

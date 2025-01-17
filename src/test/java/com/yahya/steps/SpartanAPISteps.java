@@ -148,6 +148,12 @@ public class SpartanAPISteps {
         givenPart.pathParam("id", randomSpartanId);
     }
 
+    @Then("the field value for {string} path should be equal to {string}")
+    public void theFieldValueForPathShouldBeEqualTo(String jsonPath, String expectedValue) {
+        // thenPart.body(jsonPath, is( expectedValue ) ) ;
+        response.then().body(jsonPath, is( expectedValue ) ) ;
+    }
+
 
     @When("I send put request to {string} endpoint")
     public void iSendPutRequestToEndpoint(String endpoint) {
