@@ -1,5 +1,6 @@
 package com.yahya.steps;
 
+import com.github.javafaker.Faker;
 import com.yahya.utility.DB_Util;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -10,7 +11,9 @@ import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 
+import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
@@ -125,4 +128,14 @@ public class SpartanAPISteps {
     }
 
 
+    @And("I have valid random spartan id")
+    public void iHaveValidRandomSpartanId() {
+
+        // send get request to GET /spartans
+        // for the index, use 0 to all spartanCount - 1
+        List<Integer> allIds = givenPart.get("/spartans").path("id");
+        // get random ID at a location from 0 to allIds.size()-1
+        Random rand = new Random();
+        int randomID = rand.nextInt(allIds.size());
+    }
 }
