@@ -116,4 +116,10 @@ public class SpartanAPISteps {
         // SELECT * FROM SPARTANS WHERE SPARTAN_ID = VALIDHERE
         DB_Util.runQuery("SELECT * FROM SPARTANS WHERE SPARTAN_ID = " + lastId);
     }
+
+    @When("I send delete request to {string} endpoint")
+    public void iSendDeleteRequestToEndpoint(String endpoint) {
+
+        givenPart.when().delete(endpoint).prettyPeek();
+    }
 }
