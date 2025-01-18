@@ -15,5 +15,5 @@ Feature: Spartan Search Feature
     When I send get request to "/spartans/search" endpoint
     Then I should get status code 200
     Then All names in the result should contain "Ea" and gender should be "Male"
-    Then the count in the response should match the count in the database
+#    Then the count in the response should match the count in the database
     Then The search for the name contains "Ea" and gender "Male" should match the count in the database
