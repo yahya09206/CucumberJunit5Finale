@@ -4,6 +4,7 @@ import com.yahya.utility.ConfigReader;
 import com.yahya.utility.DB_Util;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.restassured.RestAssured;
 
 public class Hooks {
 
@@ -21,5 +22,10 @@ public class Hooks {
     @After("database")
     public void teardownDBConnection() {
         DB_Util.destroy();
+    }
+
+    @After
+    public void resetRestAssured() {
+        RestAssured.reset();
     }
 }
