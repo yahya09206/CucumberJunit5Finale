@@ -8,7 +8,7 @@ Feature: Spartan Search Feature
     Given the base_uri and base_path set
 
 
-    @database
+  @database
   Scenario: Should be able to search to get valid data using GET /spartans/search
 
     And I search for spartan with name contains "Ea" and gender "Male"
@@ -19,7 +19,7 @@ Feature: Spartan Search Feature
     Then The search for the name contains "Ea" and gender "Male" should match the count in the database
 
 
-      @database
+  @database
   Scenario Outline: Should be able to search to get valid data using GET /spartans/search DDT
 
     And I search for spartan with name contains "<nameColumn>" and gender "<genderColumn>"
