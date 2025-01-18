@@ -34,3 +34,15 @@ Feature: Spartan API Single Data
     When I send get request to "/spartans/{id}" endpoint
     Then the field value for "name" path should be equal to "Kimberley"
     Then the field value for "gender" path should be equal to "Female"
+
+  Scenario: Should be able to partially update a single spartan using PATCH /spartans/{id}
+    And I have valid random spartan id
+    And I send the data in json format
+    And I am sending below valid spartan data
+      | name   | Mehmet  |
+      | gender | Male     |
+    When I send patch request to "/spartans/{id}" endpoint
+    Then I should get status code 204
+    When I send get request to "/spartans/{id}" endpoint
+    Then the field value for "name" path should be equal to "Mehmet"
+    Then the field value for "gender" path should be equal to "Male"
