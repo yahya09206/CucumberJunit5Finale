@@ -8,6 +8,7 @@ Feature: Spartan Search Feature
     Given the base_uri and base_path set
 
 
+    @database
   Scenario: Should be able to search to get valid data using GET /spartans/search
 
     And I search for spartan with name contains "Ea" and gender "Male"
@@ -15,3 +16,4 @@ Feature: Spartan Search Feature
     Then I should get status code 200
     Then All names in the result should contain "Ea" and gender should be "Male"
     Then the count in the response should match the count in the database
+    Then The search for the name contains "Ea" and gender "Male" should match the count in the database

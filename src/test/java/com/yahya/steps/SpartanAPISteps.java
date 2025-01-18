@@ -181,4 +181,27 @@ public class SpartanAPISteps {
         thenPart.body("content.name", everyItem(is(expectedName)));
         thenPart.body("content.gender", everyItem(is(expectedGender)));
     }
+
+    @Then("the count in the response should match the count in the database")
+    public void theCountInTheResponseShouldMatchTheCountInTheDatabase() {
+
+        // Query to get all data with name contains Ea(ignoring case) and Gender is male
+        // SELECT * FROM SPARTANS
+        // WHERE UPPER(NAME) LIKE '%EA%' and GENDER = 'Male'
+
+    }
+
+    @Then("The search for the name contains {string} and gender {string} should match the count in the database")
+    public void theSearchForTheNameContainsAndGenderShouldMatchTheCountInTheDatabase(String name, String gender) {
+
+        // Query to get all data with name contains Ea(ignoring case) and Gender is male
+        // SELECT * FROM SPARTANS
+        // WHERE UPPER(NAME) LIKE '%EA%' and GENDER = 'Male'
+        String query = "SELECT COUNT(*) FROM SPARTANS WHERE UPPER(NAME) LIKE %" + name.toUpperCase() + "%"
+                + " AND UPPER(GENDER) LIKE %" + gender.toUpperCase() + "%";
+
+        System.out.println("query = " + query);
+        DB_Util.runQuery(query);
+        DB_Util.displayAllData();
+    }
 }
