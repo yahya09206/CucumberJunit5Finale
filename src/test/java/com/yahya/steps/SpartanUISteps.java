@@ -1,5 +1,7 @@
 package com.yahya.steps;
 
+import com.yahya.utility.ConfigReader;
+import com.yahya.utility.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
@@ -17,6 +19,7 @@ public class SpartanUISteps {
 
 
 //        homePage.goTo() ;
+        Driver.getDriver().get(ConfigReader.read("sp.base.url"));
     }
 
     @Then("user should see below links")
