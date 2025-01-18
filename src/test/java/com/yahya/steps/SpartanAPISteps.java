@@ -167,4 +167,18 @@ public class SpartanAPISteps {
         response = givenPart.when().patch(endpoint).prettyPeek();
         thenPart = response.then();
     }
+
+    @And("I search for spartan with name contains {string} and gender {string}")
+    public void iSearchForSpartanWithNameContainsAndGender(String nameParam, String genderParam) {
+
+        givenPart.queryParam("nameParam", nameParam)
+        .queryParam("gender", genderParam);
+    }
+
+    @Then("All names in the result should contain {string} and gender should be {string}")
+    public void allNamesInTheResultShouldContainAndGenderShouldBe(String expectedName, String expectedGender) {
+
+        thenPart.body("content.name", everyItem(is(expectedName)));
+        thenPart.body("content.gender", everyItem(is(expectedGender)));
+    }
 }
