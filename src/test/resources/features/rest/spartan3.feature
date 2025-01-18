@@ -46,3 +46,4 @@ Feature: Spartan API Single Data
     When I send get request to "/spartans/{id}" endpoint
     Then the field value for "name" path should be equal to "Mehmet"
     Then the field value for "gender" path should be equal to "Male"
+

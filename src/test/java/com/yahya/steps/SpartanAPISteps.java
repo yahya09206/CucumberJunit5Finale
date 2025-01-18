@@ -160,4 +160,11 @@ public class SpartanAPISteps {
 
         response = givenPart.when().put(endpoint).prettyPeek();
     }
+
+    @When("I send patch request to {string} endpoint")
+    public void iSendPatchRequestToEndpoint(String endpoint) {
+
+        response = givenPart.when().patch(endpoint).prettyPeek();
+        thenPart = response.then();
+    }
 }
