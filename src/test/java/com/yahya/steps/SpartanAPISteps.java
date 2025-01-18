@@ -88,7 +88,7 @@ public class SpartanAPISteps {
 
         response = givenPart
                         .when()
-                        .post(endpoint).prettyPeek();
+                        .post(endpoint);
 
     }
 
@@ -125,7 +125,7 @@ public class SpartanAPISteps {
     @When("I send delete request to {string} endpoint")
     public void iSendDeleteRequestToEndpoint(String endpoint) {
 
-        response = givenPart.when().delete(endpoint).prettyPeek();
+        response = givenPart.when().delete(endpoint);
     }
 
 
@@ -158,7 +158,7 @@ public class SpartanAPISteps {
     @When("I send put request to {string} endpoint")
     public void iSendPutRequestToEndpoint(String endpoint) {
 
-        response = givenPart.when().put(endpoint).prettyPeek();
+        response = givenPart.when().put(endpoint);
     }
 
     @When("I send patch request to {string} endpoint")
