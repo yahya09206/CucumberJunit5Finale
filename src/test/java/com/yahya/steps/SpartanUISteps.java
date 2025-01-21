@@ -18,12 +18,7 @@ public class SpartanUISteps {
 
     @Given("user navigate to home page")
     public void userNavigateToHomePage() {
-        // open the browser --  set up the hook
 
-        // navigate to the homepage
-
-
-//        homePage.goTo() ;
         Driver.getDriver().get(ConfigReader.read("sp.base.url"));
     }
 
