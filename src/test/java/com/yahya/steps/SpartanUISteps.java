@@ -19,6 +19,7 @@ public class SpartanUISteps {
     @Given("user navigate to home page")
     public void userNavigateToHomePage() {
 
+        // read from config file
         Driver.getDriver().get(ConfigReader.read("sp.base.url"));
     }
 
