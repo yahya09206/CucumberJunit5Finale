@@ -14,8 +14,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SpartanUISteps {
 
-//    HomePage homePage = new HomePage() ;
-
     @Given("user navigate to home page")
     public void userNavigateToHomePage() {
 
