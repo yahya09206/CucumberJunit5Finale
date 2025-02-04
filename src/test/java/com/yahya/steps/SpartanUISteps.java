@@ -28,6 +28,7 @@ public class SpartanUISteps {
 
         // get list of links from main page
         List<WebElement> allLinks = Driver.getDriver().findElements(By.xpath("//div[@class='display-4 card']//a"));
+        // store links inside of list
         List<String> actualLinks = BrowserUtil.getAllText(allLinks);
         assertEquals(expectedLinks, actualLinks);
     }
